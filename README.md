@@ -1,4 +1,4 @@
-# Complex number library for Futhark [![Build Status](https://travis-ci.org/diku-dk/complex.svg?branch=master)](https://travis-ci.org/diku-dk/complex) [![Documentation](https://futhark-lang.org/pkgs/github.com/athas/complex/status.svg)](https://futhark-lang.org/pkgs/github.com/athas/complex/latest/)
+# Complex number library for Futhark [![Build Status](https://travis-ci.org/diku-dk/complex.svg?branch=master)](https://travis-ci.org/diku-dk/complex) [![Documentation](https://futhark-lang.org/pkgs/github.com/diku-dk/complex/status.svg)](https://futhark-lang.org/pkgs/github.com/diku-dk/complex/latest/)
 
 A straightforward library for complex numbers.
 
