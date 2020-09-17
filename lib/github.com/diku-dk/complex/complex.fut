@@ -41,9 +41,6 @@ module type complex = {
   val sqrt: complex -> complex
   val exp: complex -> complex
   val log: complex -> complex
-
-  val from_i32: i32 -> complex
-  val from_fraction: i32 -> i32 -> complex
 }
 
 -- | Given a module describing a number type, construct a module
@@ -76,7 +73,7 @@ module mk_complex(T: real): (complex with real = T.t
 
   let sqrt ((a,b): complex) =
     let gamma = T.(sqrt ((a + sqrt (a * a + b * b)) / i32 2))
-    let delta = T.(i32 (to_i32 (sgn b)) *
+    let delta = T.(sgn b *
                    sqrt (((i32 0 - a) + sqrt (a * a + b * b)) / i32 2))
     in (gamma, delta)
 
@@ -86,8 +83,4 @@ module mk_complex(T: real): (complex with real = T.t
 
   let log (z: complex) =
     mk (T.log (mag z)) (arg z)
-
-  let from_fraction (a: i32) (b: i32): complex =
-    mk (T.from_fraction a b) (T.i32 0)
-  let from_i32 (a: i32) = from_fraction a 1
 }
