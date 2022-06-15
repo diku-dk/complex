@@ -203,3 +203,11 @@ entry test_sum (a: []f32) (b: []f32) =
   let x = map2 c32.mk a b
   let y = c32.sum x
   in (c32.re y, c32.im y)
+
+-- ==
+-- entry: test_i64
+-- input { 5i64 }
+-- output { 5f32 0f32 }
+entry test_i64 (a: i64)  =
+  let x = c32.i64 a
+  in (c32.re x, c32.im x)
