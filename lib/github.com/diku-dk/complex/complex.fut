@@ -122,7 +122,7 @@ module mk_complex (T: real)
     mk_re (mag a)
 
   def fma ((a, b): complex) ((c, d): complex) ((e, f): complex) =
-    let r = T.fma a c e T.- b T.* d
+    let r = T.(fma (neg b) d (fma a c e))
     let i = T.(fma a d (fma c b f))
     in mk r i
 
